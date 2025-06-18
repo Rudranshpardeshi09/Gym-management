@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Dumbbell, Flame, HeartPulse, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+
 
 export default function Home() {
   return (
@@ -24,7 +26,9 @@ export default function Home() {
           whileTap={{ scale: 0.95 }}
           className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold shadow-lg transition"
         >
+          <Link to ="/join">
           Join Now
+          </Link>
         </motion.button>
       </motion.div>
 

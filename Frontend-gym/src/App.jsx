@@ -5,6 +5,7 @@ import Login from './components/Login/login';
 import Home from './components/Home/home';
 import Signup from './components/Signup/signup';
 import { Routes, Route } from 'react-router-dom';
+import Join from "./components/Join/join";
 /* import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; */
 
 
@@ -14,10 +15,11 @@ const App = () => {
      
       <Routes>
         
-        
         <Route path="/" element={<Login/>} />
-        <Route path="/home" element={<Home/>} />
+        <Route path="/home" element={<Home/>} />        
         <Route path ="/signup" element={<Signup/>}/>
+        <Route path="/join" element={<Join />} />
+        
       </Routes>
   );
 };
