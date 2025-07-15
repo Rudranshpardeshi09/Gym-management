@@ -1,0 +1,79 @@
+.star-border-wrapper {
+  position: relative;
+  padding: 3px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: borderGlow 8s ease infinite;
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.label {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;    /* font-medium */
+  color: #374151;      /* text-gray-700 */
+.input {
+  margin-top: 0.25rem;      /* mt-1 */
+  width: 100%;              /* w-full */
+  padding-left: 1rem;       /* px-4 */
+.nav-link {
+  color: #1f2937;           /* text-gray-800 */
+  font-weight: 600;         /* font-semibold */
+  text-underline-offset: 4px; /* underline-offset-4 */
+  transition: all 0.3s;
+  display: inline-block;
+}
+.nav-link:hover {
+  color: #1d4ed8;           /* text-blue-700 */
+  text-decoration: underline;
+  transform: scale(1.05);
+} padding-bottom: 0.5rem;   /* py-2 */
+  border: 1px solid #d1d5db;/* border (default gray-300) */
+  border-radius: 0.5rem;    /* rounded-lg */
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.input:focus {
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+}
+}
+
+.input {
+  margin-top: 0.25rem;         /* mt-1 */
+  width: 100%;                 /* w-full */
+  padding-left: 1rem;          /* px-4 */
+  padding-right: 1rem;         /* px-4 */
+  padding-top: 0.5rem;         /* py-2 */
+  padding-bottom: 0.5rem;      /* py-2 */
+  border: 1px solid #d1d5db;   /* border */
+  border-radius: 0.5rem;       /* rounded-lg */
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.input:focus {
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.nav-link {
+  color: #1f2937;           /* text-gray-800 */
+  font-weight: 600;         /* font-semibold */
+  text-underline-offset: 4px; /* underline-offset-4 */
+  transition: all 0.3s;
+  display: inline-block;
+}
+.nav-link:hover {
+  color: #1d4ed8;           /* text-blue-700 */
+  text-decoration: underline;
+  transform: scale(1.05);
+}
