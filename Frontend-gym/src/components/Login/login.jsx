@@ -156,7 +156,7 @@ export default function CombinedLoginSignup() {
                 onClick={() => setView("signup")}
                 className="w-3/4 py-3 text-lg rounded-full font-semibold bg-black border border-white text-white hover:bg-neutral-800 transition"
               >
-                Sign Up
+                Sign Up here
               </button>
             </motion.div>
           )}
