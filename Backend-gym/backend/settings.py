@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'gymapi',
     'corsheaders',
+    'members.apps.MembersConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +91,9 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'members.User'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
