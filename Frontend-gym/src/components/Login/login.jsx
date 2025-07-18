@@ -31,9 +31,10 @@ export default function CombinedLoginSignup() {
       </nav>
 
       {/* Page Content with Top Padding */}
-      <div className="flex items-center justify-center pt-24">
-        <div className="relative w-full max-w-md min-h-[520px] bg-neutral-900 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-2xl p-8 pt-6 flex flex-col items-center justify-start">
+      <div className="flex items-center justify-center pt-45">
+        <div className="relative w-150 h-115 max-w-md bg-neutral-900 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-2xl p-8 pt-6 flex flex-col items-center justify-start">
           {/* Gym Heading */}
+          <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-white/20 transition duration-300 blur-sm animate-glow-border" />
           <h1 className="text-4xl font-bold text-white mb-6 tracking-wide text-center">
             POWERFLEX GYM
           </h1>
@@ -144,11 +145,11 @@ export default function CombinedLoginSignup() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="absolute inset-0 flex flex-col items-center justify-center gap-15 p-8"
+              className="absolute inset-0 flex flex-col items-center justify-center gap-12 p-3"
             >
               <button
                 onClick={() => setView("login")}
-                className="w-3/4 py-3 text-lg rounded-full font-semibold bg-white text-black hover:bg-gray-200 transition"
+                className="w-3/4 py-3  text-lg rounded-full font-semibold bg-white text-black hover:bg-gray-200 transition"
               >
                 Login
               </button>
