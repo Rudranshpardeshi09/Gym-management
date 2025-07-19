@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'gymapi',
     'corsheaders',
-    'members.apps.MembersConfig',
-    'crispy_forms',
+    # 'members.apps.MembersConfig',
+    # 'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gymmdb',
+        'USER': 'myuser',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',  # Or your DB server IP
+        'PORT': '5432',        # Default PostgreSQL port
     }
 }
 
