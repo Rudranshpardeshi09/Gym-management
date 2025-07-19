@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-900 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br bg-black flex items-center justify-center px-4">
       <motion.div
         initial={{ y: 60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8"
+        className="w-full max-w-md bg-white rounded-2xl shadow-2xl m-4 p-4"
       >
         <div className="flex items-center justify-center gap-2 mb-6">
           <Dumbbell className="w-8 h-8 text-blue-600" />
