@@ -34,55 +34,53 @@ export default function MemberAdded() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black p-2 sm:p-4 md:p-6 text-white">
-      {/* Header / Navbar */}
+    <div className="min-h-screen bg-black text-green-500 px-4 py-6 sm:px-8 md:px-16 lg:px-32">
+      {/* Header */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col sm:flex-row justify-between items-center mb-4 sm:mb-8 gap-4"
+        className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4"
       >
-        <h1 className="text-2xl sm:text-3xl font-bold text-white">🏋️ Members List</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-green-500">🏋️ Members List</h1>
         <Link
           to="/join"
-          className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+          className="px-4 py-2 rounded-md border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition font-semibold"
         >
-          Add New Member
+          + Add New Member
         </Link>
       </motion.div>
 
-      {/* Members Table */}
-      <div className="overflow-x-auto">
+      {/* Table or Message */}
+      <div className="overflow-x-auto rounded-xl border border-green-700 bg-neutral-900 shadow-xl">
         {members.length > 0 ? (
-          <table className="min-w-full text-xs sm:text-sm bg-gray-800 shadow rounded-lg overflow-hidden">
-            <thead className="bg-blue-800 text-white">
+          <table className="min-w-full text-sm md:text-base">
+            <thead className="bg-green-900 border-b border-green-600">
               <tr>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Name</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Email</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Phone</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Membership Type</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Join Date</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Expiry Date</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Payment Type</th>
-                <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left">Remove</th>
+                {["Name", "Email", "Phone", "Membership", "Join Date", "Expiry Date", "Payment", "Action"].map((head) => (
+                  <th key={head} className="px-4 py-3 text-left font-bold text-green-400 uppercase tracking-wider">
+                    {head}
+                  </th>
+                ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-700">
+            <tbody className="divide-y divide-green-700">
               {members.map((member, index) => (
-                <tr key={index} className="hover:bg-gray-700 transition">
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300">{member.name}</td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300">{member.email}</td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300">{member.phone}</td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300 capitalize">{member.membership}</td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300">{member.joinDate}</td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300">
-                    {getExpiryDate(member.joinDate, member.membership)}
-                  </td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-gray-300">{member.paymentType}</td>
-                  <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4">
+                <tr
+                  key={index}
+                  className="hover:bg-green-950 transition-colors"
+                >
+                  <td className="px-4 py-3 text-green-100">{member.name}</td>
+                  <td className="px-4 py-3 text-green-100">{member.email}</td>
+                  <td className="px-4 py-3 text-green-100">{member.phone}</td>
+                  <td className="px-4 py-3 capitalize text-green-100">{member.membership}</td>
+                  <td className="px-4 py-3 text-green-100">{member.joinDate}</td>
+                  <td className="px-4 py-3 text-green-100">{getExpiryDate(member.joinDate, member.membership)}</td>
+                  <td className="px-4 py-3 text-green-100">{member.paymentType}</td>
+                  <td className="px-4 py-3">
                     <button
                       onClick={() => handleDelete(index)}
-                      className="px-2 sm:px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs sm:text-sm"
+                      className="px-3 py-1 rounded-md text-xs font-bold border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition"
                     >
                       Delete
                     </button>
@@ -92,7 +90,7 @@ export default function MemberAdded() {
             </tbody>
           </table>
         ) : (
-          <p className="text-gray-400 text-center">No members added yet.</p>
+          <p className="text-center py-8 text-green-400">No members added yet.</p>
         )}
       </div>
     </div>

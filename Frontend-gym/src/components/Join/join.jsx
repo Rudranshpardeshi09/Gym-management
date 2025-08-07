@@ -12,7 +12,7 @@ export default function AddMember() {
     contact: "",
     membershipType: "",
     paymentMode: "",
-    joinDate: "", // Added joinDate field
+    joinDate: "",
   });
 
   const handleChange = (e) => {
@@ -41,21 +41,18 @@ export default function AddMember() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-500 to-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-black via-neutral-900 to-black text-green-200 font-sans">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-10 bg-black/40 backdrop-blur-md text-white shadow-md">
+      <nav className="fixed top-0 left-0 w-full z-10 bg-black/70 backdrop-blur-md text-green-200 shadow-md">
         <div className="max-w-8xl mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Left: Logo */}
-          <div className="text-xl font-bold tracking-widest uppercase flex items-center gap-2">
+          <div className="text-xl font-extrabold tracking-widest uppercase flex items-center gap-2 text-green-300">
             <img src="/src/logo.png" alt="logo" className="w-10 h-10 object-contain" />
             POWERFLEX GYM
           </div>
-
-          {/* Right: Navigation links */}
           <div className="flex gap-6 font-medium text-sm sm:text-base">
-            <Link to="/home" className="hover:text-gray-300 transition">Home</Link>
-            <Link to="/members" className="hover:text-gray-300 transition">Members</Link>
-            <Link to="/" className="hover:text-gray-300 transition">Login/Signup</Link>
+            <Link to="/home" className="hover:text-green-200 transition">Home</Link>
+            <Link to="/members" className="hover:text-green-200 transition">Members</Link>
+            <Link to="/" className="hover:text-green-200 transition">Login/Signup</Link>
           </div>
         </div>
       </nav>
@@ -66,113 +63,114 @@ export default function AddMember() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="card-glow-hover w-full max-w-lg p-8 rounded-2xl shadow-2xl"
+          className="w-full max-w-4xl p-10 rounded-2xl shadow-2xl bg-black/80 border border-green-700"
         >
-          <h2 className="text-4xl font-bold text-center text-white mb-8">
-            <UserPlus className="inline mr-2" /> ADD MEMBER
+          <h2 className="text-4xl font-bold text-center text-green-500 mb-10 tracking-wide">
+            <UserPlus className="inline mr-2" /> ADD NEW MEMBER
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name */}
-            <div>
-              <label className="block mb-1 font-semibold">👤 Full Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter full name"
-                className="w-full px-4 py-2 rounded-lg bg-black/10 border border-white/20 focus:ring-2 focus:ring-white outline-none text-white"
-                required
-              />
+
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Row 1: Name and Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block mb-1 font-semibold text-green-200">👤 Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter full name"
+                  className="w-full px-4 py-2 rounded-lg bg-black/30 border border-green-600 focus:ring-2 focus:ring-green-300 outline-none text-green-200"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-1 font-semibold text-green-200">📧 Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter email"
+                  className="w-full px-4 py-2 rounded-lg bg-black/30 border border-green-600 focus:ring-2 focus:ring-green-200 outline-none text-green-200"
+                  required
+                />
+              </div>
             </div>
 
-            {/* Email */}
-            <div>
-              <label className="block mb-1 font-semibold">📧 Email Address</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter email"
-                className="w-full px-4 py-2 rounded-lg bg-black/10 border border-white/20 focus:ring-2 focus:ring-white outline-none text-white"
-                required
-              />
+            {/* Row 2: Contact and Membership Type */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block mb-1 font-semibold text-green-200">📞 Contact Number</label>
+                <input
+                  type="tel"
+                  name="contact"
+                  value={formData.contact}
+                  onChange={handleChange}
+                  placeholder="Enter contact number"
+                  className="w-full px-4 py-2 rounded-lg bg-black/30 border border-green-600 focus:ring-2 focus:ring-green-300 outline-none text-green-200"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-1 font-semibold text-green-200">💼 Membership Type</label>
+                <select
+                  name="membershipType"
+                  value={formData.membershipType}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 rounded-lg bg-black/30 border border-green-600 focus:ring-2 focus:ring-green-300 outline-none text-green-200"
+                  required
+                >
+                  <option value="">-- Select Membership --</option>
+                  <option value="Monthly">📅 Monthly</option>
+                  <option value="Quarterly">📆 Quarterly</option>
+                  <option value="Half-Yearly">🗓️ Half-Yearly</option>
+                  <option value="Yearly">🧾 Yearly</option>
+                </select>
+              </div>
             </div>
 
-            {/* Contact */}
-            <div>
-              <label className="block mb-1 font-semibold">📞 Contact Number</label>
-              <input
-                type="tel"
-                name="contact"
-                value={formData.contact}
-                onChange={handleChange}
-                placeholder="Enter contact number"
-                className="w-full px-4 py-2 rounded-lg bg-black/10 border border-white/20 focus:ring-2 focus:ring-white outline-none text-white"
-                required
-              />
-            </div>
-
-            {/* Membership Type */}
-            <div>
-              <label className="block mb-1 font-semibold">💼 Membership Type</label>
-              <select
-                name="membershipType"
-                value={formData.membershipType}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-black/60 border border-white/20 focus:ring-2 focus:ring-white outline-none text-white"
-                required
-              >
-                <option value="">-- Select Membership --</option>
-                <option value="Monthly">📅 Monthly</option>
-                <option value="Quarterly">📆 Quarterly</option>
-                <option value="Half-Yearly">🗓️ Half-Yearly</option>
-                <option value="Yearly">🧾 Yearly</option>
-              </select>
-            </div>
-
-            {/* Date of Joining */}
-            <div>
-              <label className="block mb-1 font-semibold">📅 Date of Joining</label>
-              <input
-                type="date"
-                name="joinDate"
-                value={formData.joinDate}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-black/10 border border-white/20 focus:ring-2 focus:ring-white outline-none text-white"
-                required
-              />
-            </div>
-
-            {/* Payment Mode */}
-            <div>
-              <label className="block mb-2 font-semibold">💳 Payment Mode</label>
-              <div className="flex items-center gap-6">
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="paymentMode"
-                    value="Online"
-                    checked={formData.paymentMode === "Online"}
-                    onChange={handleChange}
-                    className="accent-black scale-110"
-                    required
-                  />
-                  🌐 Online
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="paymentMode"
-                    value="Cash"
-                    checked={formData.paymentMode === "Cash"}
-                    onChange={handleChange}
-                    className="accent-black scale-110"
-                    required
-                  />
-                  💵 Cash
-                </label>
+            {/* Row 3: Join Date and Payment Mode */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block mb-1 font-semibold text-green-200">📅 Date of Joining</label>
+                <input
+                  type="date"
+                  name="joinDate"
+                  value={formData.joinDate}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 rounded-lg bg-black/30 border border-green-600 focus:ring-2 focus:ring-green-300 outline-none text-green-200"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-2 font-semibold text-green-200">💳 Payment Mode</label>
+                <div className="flex items-center gap-6 mt-1">
+                  <label className="flex items-center gap-2 text-green-150">
+                    <input
+                      type="radio"
+                      name="paymentMode"
+                      value="Online"
+                      checked={formData.paymentMode === "Online"}
+                      onChange={handleChange}
+                      className="accent-green-300 scale-110"
+                      required
+                    />
+                    🌐 Online
+                  </label>
+                  <label className="flex items-center gap-2 text-green-200">
+                    <input
+                      type="radio"
+                      name="paymentMode"
+                      value="Cash"
+                      checked={formData.paymentMode === "Cash"}
+                      onChange={handleChange}
+                      className="accent-green-300 scale-110"
+                      required
+                    />
+                    💵 Cash
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -181,9 +179,9 @@ export default function AddMember() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full bg-white text-black hover:bg-gray-200 transition-all duration-300 py-2 rounded-lg font-semibold shadow-md"
+              className="w-full bg-green-300 text-black hover:bg-green-500 transition-all duration-300 py-3 rounded-lg font-bold shadow-xl uppercase tracking-wider"
             >
-              Add Member
+              ➕ Add Member
             </motion.button>
           </form>
         </motion.div>

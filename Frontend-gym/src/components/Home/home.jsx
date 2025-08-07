@@ -105,21 +105,21 @@ export default function Home() {
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight">
           Welcome to PowerFlex Gym
         </h1>
-        <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl md:text-2xl font-semibold text-gray-200 tracking-wider">
+        <h2 className="mt-20 sm:mt-8 text-lg sm:text-xl md:text-2xl font-semiboldC tracking-wider">
           YOUR ULTIMATE FITNESS DESTINATION 24/7
         </h2>
-        <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-da-300 max-w-xs sm:max-w-2xl mx-auto">
-          Transform your body and mind with our futuristic facilities and 24/7 fitness.
-        </p>
+        <p className="mt-8 sm:mt-8 text-base sm:text-lg md:text-2xl Font-extrabold text-white text-da-300 max-w-xs sm:max-w-2xl mx-auto">
+          Transform your body and mind
+        </p>*
         <motion.div whileHover={{ scale: 1.1 }} className="inline-block mt-6 sm:mt-8">
-          <Link to="/join" className="px-6 sm:px-8 py-2 sm:py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition duration-300 text-sm sm:text-base">
+          <Link to="/join" className="px-15 sm:px-10 py-2 sm:py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition duration-300 text-sm sm:text-base">
             ADD MEMBER
           </Link>
         </motion.div>
       </motion.div>
 
       {/* Stats Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 max-w-xs sm:max-w-6xl mx-auto mb-10 sm:mb-20 z-10 relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-20 max-w-xs sm:max-w-6xl mx-50 mb-10 sm:mb-7 z-10 relative">
         <StatCard icon={<Users />} label="Active Members" count={members.length} />
         <StatCard icon={<TimerReset />} label="Trainers" count={18} />
         <StatCard icon={<ShieldCheck />} label="Programs" count={24} />

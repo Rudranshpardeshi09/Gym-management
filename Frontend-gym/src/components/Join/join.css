@@ -1,27 +1,20 @@
-@import "tailwindcss";
-/* AddMember.css – thin animated gradient border on hover */
-/* AddMember.css – Black & White with dark glow on hover */
-.card-glow-hover {
+.star-border-wrapper {
   position: relative;
+  padding: 3px;
   border-radius: 1rem;
-  z-index: 0;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(20, 20, 20, 0.6); /* subtle black glass effect */
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: borderGlow 8s ease infinite;
 }
 
-.card-glow-hover::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  z-index: -1;
-  background: linear-gradient(135deg, #1a1a1a, #444);
-  opacity: 0;
-  filter: blur(8px);
-  transition: opacity 0.4s ease;
-}
-
-.card-glow-hover:hover::before {
-  opacity: 1;
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
