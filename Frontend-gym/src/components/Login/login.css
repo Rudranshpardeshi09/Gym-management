@@ -1,0 +1,41 @@
+/* glow.css */
+
+.glow-border {
+  position: relative;
+  background: linear-gradient(135deg, #00f2ff, #0081ff, #00f2ff, #0081ff);
+  background-size: 400% 400%;
+  animation: glow-animate 8s ease infinite;
+  border-radius: 1.5rem;
+  padding: 2px;
+}
+
+@keyframes glow-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.input-glow {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0.25rem;
+  background-color: transparent;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  color: white;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+.input-glow::placeholder {
+  color: #aaa;
+}
+.input-glow:focus {
+  box-shadow: 0 0 8px #00f2ff;
+  border-color: #00f2ff;
+}
